@@ -381,7 +381,7 @@ if __name__=="__main__":
             temp_file='temp_static_art'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(Features):
-                    write_vec_flt(f, Features[key], key=key)
+                    adri=0#write_vec_flt(f, Features[key], key=key)
             ark_file=file_features.replace('.txt','')+'.ark'
             scp_file=file_features.replace('.txt','')+'.scp'
             os.system("copy-vector ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)
@@ -396,7 +396,7 @@ if __name__=="__main__":
             temp_file='temp_dynamic_art'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(FeaturesOnset):
-                    write_mat(f, FeaturesOnset[key], key=key)
+                    adri=0#write_mat(f, FeaturesOnset[key], key=key)
             ark_file=file_features.replace('.txt','')+'_onset.ark'
             scp_file=file_features.replace('.txt','')+'_onset.scp'
             os.system("copy-matrix ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)
@@ -404,7 +404,7 @@ if __name__=="__main__":
             temp_file='temp_dynamic_art2'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(FeaturesOffset):
-                    write_mat(f, FeaturesOffset[key], key=key)
+                    adri=0#write_mat(f, FeaturesOffset[key], key=key)
             ark_file=file_features.replace('.txt','')+'_offset.ark'
             scp_file=file_features.replace('.txt','')+'_offset.scp'
             os.system("copy-matrix ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)

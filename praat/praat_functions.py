@@ -43,7 +43,7 @@ def praat_vuv(audio_filaname, resultsp, resultst, time_stepF0=0, minf0=75, maxf0
 	Returns:
 		Nothing
 	"""
-	command='praat '+path_praat_script+'/vuv_praat.praat '
+	command='..\\praat\\praat.exe '+path_praat_script+'/vuv_praat.praat '
 	command+=audio_filaname+' '+resultsp +' '+  resultst+' '
 	command+=str(minf0)+' '+str(maxf0)+' '
 	command+=str(time_stepF0)+' '+str(maxVUVPeriod)+' '+str(averageVUVPeriod)
@@ -72,7 +72,7 @@ def praat_formants(audio_filename, results_filename,sizeframe,step, n_formants=5
 	Returns:
 		Nothing
 	"""
-	command='praat '+path_praat_script+'/FormantsPraat.praat '
+	command='..\\praat\\praat.exe '+path_praat_script+'/FormantsPraat.praat '
 	command+=audio_filename + ' '+results_filename+' '
 	command+=str(n_formants)+' '+ str(max_formant) + ' '
 	command+=str(float(sizeframe)/2)+' '

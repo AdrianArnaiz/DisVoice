@@ -67,7 +67,7 @@ from peakdetect import peakdetect
 sys.path.append('../')
 from utils import Hz2semitones
 sys.path.append('../kaldi-io')
-from kaldi_io import write_mat, write_vec_flt
+#from kaldi_io import write_mat, write_vec_flt
 from GCI import SE_VQ_varF0, IAIF, get_vq_params
 from scipy.integrate import cumtrapz
 
@@ -311,7 +311,7 @@ if __name__=="__main__":
             temp_file='temp_static'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(Features):
-                    write_vec_flt(f, Features[key], key=key)
+                    adri=0#write_vec_flt(f, Features[key], key=key)
             ark_file=file_features.replace('.txt','')+'.ark'
             scp_file=file_features.replace('.txt','')+'.scp'
             os.system("copy-vector ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)
@@ -325,7 +325,7 @@ if __name__=="__main__":
             temp_file='temp_dynamic'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(Features):
-                    write_mat(f, Features[key], key=key)
+                    adri=0#write_mat(f, Features[key], key=key)
             ark_file=file_features.replace('.txt','')+'.ark'
             scp_file=file_features.replace('.txt','')+'.scp'
             os.system("copy-matrix ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)

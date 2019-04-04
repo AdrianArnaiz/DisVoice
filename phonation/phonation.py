@@ -4,7 +4,7 @@
 Created on Jul 21 2017
 
 @author: J. C. Vasquez-Correa
-
+Modificado para el no uso de Kaldi.
 
 Compute phonation features from sustained vowels and continuous speech.
 
@@ -68,7 +68,7 @@ path_app = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(path_app+'/../')
 from utils import Hz2semitones
 sys.path.append(path_app+'/../kaldi-io')
-from kaldi_io import write_mat, write_vec_flt
+#from kaldi_io import write_mat, write_vec_flt
 
 sys.path.append(path_app+'/../praat')
 import praat_functions
@@ -313,7 +313,7 @@ if __name__=="__main__":
             temp_file='temp_static'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(Features):
-                    write_vec_flt(f, Features[key], key=key)
+                    adri=0#write_vec_flt(f, Features[key], key=key)
             ark_file=file_features.replace('.txt','')+'.ark'
             scp_file=file_features.replace('.txt','')+'.scp'
             os.system("copy-vector ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)
@@ -327,7 +327,7 @@ if __name__=="__main__":
             temp_file='temp_dynamic'+file_features[:-4]+'.ark'
             with open(temp_file,'wb') as f:
                 for key in sorted(Features):
-                    write_mat(f, Features[key], key=key)
+                    adri=0#write_mat(f, Features[key], key=key)
             ark_file=file_features.replace('.txt','')+'.ark'
             scp_file=file_features.replace('.txt','')+'.scp'
             os.system("copy-matrix ark:"+temp_file+" ark,scp:"+ark_file+','+scp_file)
